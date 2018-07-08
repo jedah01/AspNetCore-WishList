@@ -16,14 +16,21 @@ namespace WishList
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(); //add the support for MVC function 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-           
-                app.UseMvcWithDefaultRoute();
+            if(env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage(); // this will give better detail error page.
+            }
+                else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+                app.UseMvcWithDefaultRoute(); //so the startup flow goes intpmvc defualt route
             ;
         }
     }
