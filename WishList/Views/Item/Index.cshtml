@@ -4,13 +4,13 @@
 
 <a asp-action="create">Add item</a>
 
-<u1>
+<ul>
     @foreach (var item in Model)
     {
         <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a><</li>
     }
 
-</u1>
+</ul>
 
 @*Create The Index View
     Create a new view Index in the WishList/Views/Item folder
