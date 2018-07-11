@@ -3,9 +3,16 @@
 <h3>Add item to Wishlist</h3>
 
 <form asp-action="create">
-    <input asp-for="Description"/>
+    <input asp-for="Description" />
     <span asp-validation-for="Description"></span>
     <button type="submit">Add Item</button>
-
-
 </form>
+
+@*Create a new view Create in the WishList/Views/Item folder. (You will need to make some of these folders)
+
+This view should use a model of Item. (You'll need to use the full WishList.Models.Item not just Item)
+This view should contain an h3 tag with the text Add item to wishlist.
+This view should have a form tag containing the attribute asp-action set to "create".
+Inside the form tag, create an input tag with the attribute asp-for set to "Description".
+After the input tag, create a span tag with the attribute asp-validation-for set to "Description".
+After the span tag, create a button tag with the attribute type set to "submit" and the text Add Item.*@
